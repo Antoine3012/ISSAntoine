@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="description" content="Auteur : Antoine POTIER, Site permettant le tracking de la Station Spatial internationale en orbite et aussi le tracking des membres actuellement présent sur l'ISS.">
+    <meta name="theme-color" content="#000000"/>
+    <link rel="shortcut icon" href="assets/img/icon-iss.webp" type="image/x-icon">
+    <title>ISS</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <div class="bg-animation">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+        <div id="stars4"></div>
+    </div>
+
+    <header class="header">
+        <a href="#default" class="logo"><img src="assets/img/logo.png" alt="Logo de la Station Spatial internationale">
+            <h1 class="title">International Space Station</h1>
+        </a>
+        <nav>
+            <input type="checkbox" role="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+            <ul id="menu">
+                <li><a href="#positioniss">ISS Position</a></li>
+                <li><a href="#membreiss">Membres</a></li>
+                <li><a href="#photosiss">Photos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="issposition" id="positioniss">
+        <div class="container">
+            <div class="centerISS">
+                <input type="checkbox" id="centerOnISS" checked="true" placeholder="">
+                <label for="centerOnISS">Center on ISS</label>
+            </div>
+            <div class="infoiss">
+                <h1 class="titleiss">ISS Position</h1><br>
+                <h3 class="titleiss">Latitude : <span id="lat"></span></h3>
+                <h3 class="titleiss">Longitude : <span id="lon"></span></h3><br>
+            </div>
+            <div class="pathISS">
+                <input type="checkbox" id="displayPath" checked="true" placeholder="">
+                <label for="centerOnISS">Display Path</label>
+            </div>
+        </div>
+        <div id="ISSmap"></div>
+    </section>
+    <section class="nbrpersspace" id="membreiss">
+        <h1>Membre de l'ISS</h1>
+        <table id="iss-members">
+            <thead>
+                <tr>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </section>
+    <section class="photos" id="photosiss">
+        <h1 class="images-title">Images</h1>
+        <div class="slide-container">
+            <div class="custom-slider fade">
+                <img class="slide-img" src="assets/img/iss/1.jpg" alt="Photo de la Station Spatiale Internationale avec une vue dirigée vers la Terre.">
+            </div>
+            <div class="custom-slider fade">
+                <img class="slide-img" src="assets/img/iss/2.jpg" alt="Photo d'un membre de la Station Spatiale Internationale qui regarde la Terre à partir d'une fenêtre.">
+            </div>
+            <div class="custom-slider fade">
+                <img class="slide-img" src="assets/img/iss/3.jpg" alt="Photo de la vue d'une fenêtre la Station Spatiale Internationale vers la Terre.">
+            </div>
+            <div class="custom-slider fade">
+                <img class="slide-img" src="assets/img/iss/4.jpg" alt="Photo de l'intérieur de la Station Spatiale Internationale.">
+            </div>
+            <div class="custom-slider fade">
+                <img class="slide-img" src="assets/img/iss/5.jpg" alt="Illustration des différents modules de la Station Spatiale Internationale.">
+            </div>
+            <div class="custom-slider fade">
+                <img class="slide-img" src="assets/img/iss/6.jpg" alt="Photo d'un membre de la Station Spatiale Internationale dans l'espace.">
+            </div>
+            <div class="custom-slider fade">
+                <img class="slide-img" src="assets/img/iss/7.jpg" alt="Photo de l'intérieur de la Station Spatiale Internationale.">
+            </div>
+            <div class="custom-slider fade">
+                <img class="slide-img" src="assets/img/iss/8.jpg" alt="Photo de l'intérieur de la Station Spatiale Internationale avec un membre de l'ISS.">
+            </div>
+            <div class="custom-slider fade">
+                <img class="slide-img" src="assets/img/iss/9.jpg" alt="Photo d'un membre de la Station Spatiale Internationale travaillant sur ordinateur.">
+            </div>
+            <div class="custom-slider fade">
+                <img class="slide-img" src="assets/img/iss/10.jpg" alt="Illustration des différents vaisseaux utilisés ou futurement utilisés">
+            </div>
+            <div class="custom-slider fade">
+                <img class="slide-img" src="assets/img/iss/11.jpg" alt="Affiche de présentation de la Station Spatial International (taille, poids,etc)">
+            </div>
+            <div class="custom-slider fade">
+                <img class="slide-img" src="assets/img/iss/12.jpg" alt="Photo de la Station Spatial International vu de l'extérieur avec une comparaison d'un humain juste à côté.">
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>@Antoine Potier - 2023</p>
+    </footer>
+
+    <script src="assets/js/carousel.js"></script>
+    <script src="assets/js/issposition.js"></script>
+    <script src="assets/js/memspace.js"></script>
+</body>
+
+</html>
